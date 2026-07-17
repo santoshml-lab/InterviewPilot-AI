@@ -86,21 +86,15 @@ return;
 
 const feedbackBox = document.getElementById("feedbackBox");
 
-feedbackBox.innerHTML = "🧠 AI is evaluating your answer...";
-
-}
-// ======================================
-// PART 2
-// AI Answer Evaluation
-// ======================================
+feedbackBox.innerHTML="🧠 AI is evaluating your answer...";
 
 try{
 
-const role = document.getElementById("role").value;
-const company = document.getElementById("company").value;
-const difficulty = document.getElementById("difficulty").value;
+const role=document.getElementById("role").value;
+const company=document.getElementById("company").value;
+const difficulty=document.getElementById("difficulty").value;
 
-const response = await fetch(API_URL,{
+const response=await fetch(API_URL,{
 
 method:"POST",
 
@@ -112,30 +106,23 @@ body:JSON.stringify({
 
 action:"evaluate",
 
-role:role,
+role,
 
-company:company,
+company,
 
-difficulty:difficulty,
+difficulty,
 
 question:currentQuestion,
 
-answer:answer
+answer
 
 })
 
 });
 
-const data = await response.json();
+const data=await response.json();
 
-feedbackBox.innerHTML = data.response;
-
-// Give XP if dashboard functions exist
-if(typeof addXP === "function"){
-
-addXP(20);
-
-}
+feedbackBox.innerHTML=data.response;
 
 }catch(error){
 
@@ -144,6 +131,16 @@ feedbackBox.innerHTML="❌ Failed to evaluate answer.";
 console.error(error);
 
 }
+
+}
+
+
+// ======================================
+// PART 2
+// AI Answer Evaluation
+// ======================================
+
+
 
 // ======================================
 // NEXT QUESTION
