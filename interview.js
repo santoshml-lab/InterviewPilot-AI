@@ -3,6 +3,7 @@
 // interview.js
 // PART 1
 // ======================================
+alert("Interview JS Loaded");
 
 const API_URL = "https://interviewlession.onrender.com/interview";
 
@@ -13,6 +14,7 @@ let currentQuestion = "";
 // ======================================
 
 async function startInterview(){
+alert("Start Interview Clicked");  
 
 const role = document.getElementById("role").value;
 const company = document.getElementById("company").value;
