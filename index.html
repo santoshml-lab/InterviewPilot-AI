@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>InterviewPilot AI | Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<meta name="theme-color" content="#050816">
+
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<!-- =========================
+SIDEBAR
+========================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<h2>🎯 InterviewPilot</h2>
+
+<span>AI Career Platform</span>
+
+</div>
+
+<nav>
+
+<a class="active" href="#">
+🏠 Dashboard
+</a>
+
+<a href="interview.html">
+🎤 AI Interview
+</a>
+
+<a href="resume.html">
+📄 Resume Analyzer
+</a>
+
+<a href="coding.html">
+💻 Coding Round
+</a>
+
+<a href="aptitude.html">
+🧠 Aptitude
+</a>
+
+<a href="analysis.html">
+📊 Performance
+</a>
+
+<a href="history.html">
+📜 Interview History
+</a>
+
+<a href="profile.html">
+👤 Profile
+</a>
+
+<a href="#" onclick="logout()">
+🚪 Logout
+</a>
+
+</nav>
+
+</aside>
+
+<!-- =========================
+MAIN CONTENT
+========================= -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h2>
+
+Welcome Back 👋
+
+</h2>
+
+<p>
+
+Let's crack your dream company interview today.
+
+</p>
+
+</div>
+
+<button class="premium-btn">
+
+🚀 Upgrade Pro
+
+</button>
+
+</header>
+
+<!-- =========================
+HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<span class="hero-tag">
+
+🤖 AI Powered Career Preparation
+
+</span>
+
+<h1>
+
+Prepare Smarter.
+
+<span>Get Hired Faster.</span>
+
+</h1>
+
+<p>
+
+Practice HR interviews, technical interviews,
+coding rounds and resume analysis using
+advanced AI.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="interview.html" class="btn primary">
+
+🎤 Start Interview
+
+</a>
+
+<a href="resume.html" class="btn secondary">
+
+📄 Analyze Resume
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<h3>
+
+🔥 Today's Goal
+
+</h3>
+
+<h2>
+
+Complete 2 Interviews
+
+</h2>
+
+<p>
+
+✔ HR Interview
+
+<br>
+
+✔ Technical Round
+
+<br>
+
+✔ Resume Review
+
+</p>
+
+</div>
+
+</section>
+
+  <!-- =========================
+QUICK ACTIONS
+========================= -->
+
+<section class="dashboard">
+
+<div class="dashboard-card" onclick="location.href='interview.html'">
+
+<h3>🎤 AI Mock Interview</h3>
+
+<p>
+
+Practice HR, Technical and Behavioural Interviews.
+
+</p>
+
+</div>
+
+<div class="dashboard-card" onclick="location.href='resume.html'">
+
+<h3>📄 Resume Analyzer</h3>
+
+<p>
+
+Get ATS Score and AI Resume Feedback.
+
+</p>
+
+</div>
+
+<div class="dashboard-card" onclick="location.href='coding.html'">
+
+<h3>💻 Coding Round</h3>
+
+<p>
+
+Solve DSA & Programming Questions with AI.
+
+</p>
+
+</div>
+
+<div class="dashboard-card" onclick="location.href='analysis.html'">
+
+<h3>📊 Performance</h3>
+
+<p>
+
+Track Interview Progress and Accuracy.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+STATS
+========================= -->
+
+<section class="stats">
+
+<div class="stat">
+
+<h2>🏆 0</h2>
+
+<p>Interviews Completed</p>
+
+</div>
+
+<div class="stat">
+
+<h2>⭐ 0 XP</h2>
+
+<p>Total XP</p>
+
+</div>
+
+<div class="stat">
+
+<h2>📄 0</h2>
+
+<p>Resume Reviews</p>
+
+</div>
+
+<div class="stat">
+
+<h2>🎯 0%</h2>
+
+<p>Interview Score</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+FEATURED COMPANIES
+========================= -->
+
+<h2 class="section-title">
+
+🏢 Practice for Top Companies
+
+</h2>
+
+<section class="subjects">
+
+<div class="subject">
+
+<h2>🟦 Google</h2>
+
+<p>
+
+DSA • System Design
+
+<br>
+
+Behavioral Interview
+
+</p>
+
+</div>
+
+<div class="subject">
+
+<h2>🟧 Amazon</h2>
+
+<p>
+
+Leadership Principles
+
+<br>
+
+Coding Assessment
+
+</p>
+
+</div>
+
+<div class="subject">
+
+<h2>🟩 Microsoft</h2>
+
+<p>
+
+Coding
+
+<br>
+
+Technical Interview
+
+</p>
+
+</div>
+
+<div class="subject">
+
+<h2>⚫ TCS</h2>
+
+<p>
+
+Aptitude
+
+<br>
+
+HR + Technical
+
+</p>
+
+</div>
+
+</section>
+
+  <!-- =========================
+AI PERFORMANCE
+========================= -->
+
+<section class="continue">
+
+<h3>📈 AI Performance Tracker</h3>
+
+<p>
+
+Keep practicing consistently to improve your interview confidence and increase your hiring chances.
+
+</p>
+
+<div class="progress">
+
+<div
+id="progressFill"
+class="progress-fill">
+
+</div>
+
+</div>
+
+<p id="progressText">
+
+0% Completed
+
+</p>
+
+<button
+class="btn primary"
+onclick="increaseProgress()">
+
+✅ Complete Today's Practice
+
+</button>
+
+</section>
+
+<!-- =========================
+XP & BADGES
+========================= -->
+
+<section class="stats">
+
+<div class="stat">
+
+<h2>⭐ 0 XP</h2>
+
+<p>Total Experience</p>
+
+</div>
+
+<div class="stat">
+
+<h2>🔥 0</h2>
+
+<p>Daily Streak</p>
+
+</div>
+
+<div class="stat">
+
+<h2>🥇 Beginner</h2>
+
+<p>Current Badge</p>
+
+</div>
+
+<div class="stat">
+
+<h2>🎯 0%</h2>
+
+<p>Hiring Readiness</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+RECENT ACTIVITY
+========================= -->
+
+<section class="continue">
+
+<h3>📜 Recent Activity</h3>
+
+<p>
+
+No interview attempts yet.
+
+Start your first AI Interview to build your history.
+
+</p>
+
+<a href="interview.html" class="btn primary">
+
+🎤 Start First Interview
+
+</a>
+
+</section>
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<h2>
+
+🎯 InterviewPilot AI
+
+</h2>
+
+<p>
+
+Prepare Smarter • Interview Better • Get Hired Faster
+
+</p>
+
+<p>
+
+Built with ❤️ by Santosh
+
+</p>
+
+</footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+<script src="auth.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
