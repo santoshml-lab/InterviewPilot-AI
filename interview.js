@@ -122,7 +122,7 @@ answer
 
 const data=await response.json();
 
-feedbackBox.innerHTML=data.response;
+feedbackBox.innerHTML = marked.parse(data.response);
 
 }catch(error){
 
