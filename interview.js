@@ -156,3 +156,4 @@ document.getElementById("feedbackBox").innerHTML="";
 startInterview();
 
 }
+
