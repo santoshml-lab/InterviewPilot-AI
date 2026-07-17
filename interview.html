@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Mock Interview | InterviewPilot AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h2>🎤 AI Mock Interview</h2>
+
+<p>Practice interviews with AI and improve your confidence.</p>
+
+</div>
+
+<a href="index.html" class="btn secondary">
+🏠 Dashboard
+</a>
+
+</header>
+
+<section class="continue">
+
+<h3>Interview Setup</h3>
+
+<label>Your Name</label>
+
+<input
+type="text"
+id="username"
+placeholder="Enter your name">
+
+<label>Job Role</label>
+
+<select id="role">
+
+<option>Frontend Developer</option>
+
+<option>Backend Developer</option>
+
+<option>Full Stack Developer</option>
+
+<option>Data Analyst</option>
+
+<option>Machine Learning Engineer</option>
+
+<option>AI Engineer</option>
+
+<option>Software Engineer</option>
+
+</select>
+
+<label>Company</label>
+
+<select id="company">
+
+<option>Google</option>
+
+<option>Amazon</option>
+
+<option>Microsoft</option>
+
+<option>Meta</option>
+
+<option>Apple</option>
+
+<option>TCS</option>
+
+<option>Infosys</option>
+
+<option>Wipro</option>
+
+</select>
+
+<label>Difficulty</label>
+
+<select id="difficulty">
+
+<option>Easy</option>
+
+<option>Medium</option>
+
+<option>Hard</option>
+
+</select>
+
+<button class="btn primary" onclick="startInterview()">
+
+🚀 Start Interview
+
+</button>
+
+</section>
+
+<section class="continue">
+
+<h3>🤖 AI Question</h3>
+
+<div
+id="questionBox"
+class="output-box">
+
+Click "Start Interview" to receive your first AI interview question.
+
+</div>
+
+</section>
+
+<section class="continue">
+
+<h3>Your Answer</h3>
+
+<textarea
+
+id="answer"
+
+placeholder="Type your answer here...">
+
+</textarea>
+
+<button class="btn primary" onclick="submitAnswer()">
+
+✅ Submit Answer
+
+</button>
+
+</section>
+
+<section class="continue">
+
+<h3>📊 AI Feedback</h3>
+
+<div
+id="feedbackBox"
+class="output-box">
+
+Your AI feedback will appear here.
+
+</div>
+
+</section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+<script src="auth.js"></script>
+
+<script src="interview.js"></script>
+
+</body>
+
+</html>
