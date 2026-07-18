@@ -127,6 +127,18 @@ console.log(data.response);
 feedbackBox.innerHTML = marked.parse(data.response);
 // Extract Score
 
+let score = "0/10";
+
+const matches = data.response.match(/\d+(\.\d+)?\s*\/\s*10/g);
+
+if (matches && matches.length > 0) {
+    score = matches[matches.length - 1];
+}
+
+alert("Saving Score: " + score);
+ 
+ 
+
 
 
 
