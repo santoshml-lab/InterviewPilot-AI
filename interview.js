@@ -126,15 +126,11 @@ console.log(data.response);
 
 feedbackBox.innerHTML = marked.parse(data.response);
 // Extract Score
-let score = "0/10";
 
-const match = data.response.match(/(\d+(\.\d+)?)\s*\/\s*10/);
 
-let score = "0/10";
 
-if (match) {
-    score = match[0];
-}
+
+
 
 
 
