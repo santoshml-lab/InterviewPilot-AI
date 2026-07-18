@@ -6,6 +6,7 @@
 alert("Interview JS Loaded");
 
 const API_URL = "https://interviewlession.onrender.com/interview";
+const HISTORY_API = "https://interviewlession.onrender.com/history";
 
 let currentQuestion = "";
 
@@ -123,6 +124,30 @@ answer
 const data=await response.json();
 
 feedbackBox.innerHTML = marked.parse(data.response);
+// Extract Score
+let score = "0/10";
+
+const match = data.response.match(/Score:\s*([0-9.]+\/10)/i);
+
+if (match) {
+    score = match[1];
+}
+
+// Save History
+await fetch(HISTORY_API, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        user_id: localStorage.getItem("user_id") || "guest",
+        company: company,
+        role: role,
+        score: score,
+        feedback: data.response,
+        interview_type: "Mock Interview"
+    })
+});  
 
 }catch(error){
 
