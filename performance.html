@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Performance Analyzer | InterviewPilot AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h2>📊 Performance Analyzer</h2>
+
+<p>Track your interview performance with AI insights.</p>
+
+</div>
+
+<a href="index.html" class="btn secondary">
+
+🏠 Dashboard
+
+</a>
+
+</header>
+
+<section class="continue">
+
+<h3>📈 Overall Performance</h3>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<h4>Overall Score</h4>
+
+<h2 id="overallScore">0/10</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h4>Mock Interviews</h4>
+
+<h2 id="mockCount">0</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h4>Coding Interviews</h4>
+
+<h2 id="codingCount">0</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h4>Resume Analysis</h4>
+
+<h2 id="resumeCount">0</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="continue">
+
+<h3>⭐ Average Scores</h3>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<h4>Interview Score</h4>
+
+<h2 id="interviewScore">0%</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h4>Coding Score</h4>
+
+<h2 id="codingScore">0%</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h4>ATS Score</h4>
+
+<h2 id="atsScore">0%</h2>
+
+</div>
+
+</div>
+
+</section>
+<section class="continue">
+
+<h3>💪 Strengths</h3>
+
+<div id="strengths" class="output-box">
+
+No data available.
+
+</div>
+
+</section>
+
+<section class="continue">
+
+<h3>⚠ Weak Areas</h3>
+
+<div id="weakAreas" class="output-box">
+
+No data available.
+
+</div>
+
+</section>
+
+<section class="continue">
+
+<h3>🎯 AI Recommendation</h3>
+
+<div id="recommendation" class="output-box">
+
+Your AI recommendations will appear here.
+
+</div>
+
+<button class="btn primary" onclick="loadPerformance()">
+
+📊 Analyze Performance
+
+</button>
+
+</section>
+
+</main>
+
+<footer>
+
+<h2>📊 InterviewPilot AI</h2>
+
+<p>AI Powered Interview Preparation Platform</p>
+
+<p>Built with ❤️ by Santosh</p>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+<script src="auth.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script src="performance.js"></script>
+
+</body>
+</html>
+  
