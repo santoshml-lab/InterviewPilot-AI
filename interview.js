@@ -122,6 +122,7 @@ answer
 });
 
 const data=await response.json();
+console.log(data.response);    
 
 feedbackBox.innerHTML = marked.parse(data.response);
 // Extract Score
