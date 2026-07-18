@@ -128,11 +128,15 @@ feedbackBox.innerHTML = marked.parse(data.response);
 // Extract Score
 let score = "0/10";
 
-const match = data.response.match(/Score:\s*([0-9.]+\/10)/i);
+const match = data.response.match(/(\d+(\.\d+)?)\s*\/\s*10/);
+
+let score = "0/10";
 
 if (match) {
-    score = match[1];
+    score = match[0];
 }
+
+
 
 // Save History
  const {
