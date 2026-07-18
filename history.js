@@ -95,8 +95,14 @@ function viewFeedback(feedback) {
 
     feedback = decodeURIComponent(feedback);
 
-    alert(feedback);
+    document.getElementById("historyContainer").innerHTML += `
+        <div class="output-box">
+            ${marked.parse(feedback)}
+        </div>
+    `;
 }
+
+    
 
 // ===============================
 // Delete History
