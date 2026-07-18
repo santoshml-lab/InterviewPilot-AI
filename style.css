@@ -1143,5 +1143,23 @@ opacity:.9;
 }
 
 /* ===========================
+Mobile Sidebar Fix
+=========================== */
+
+@media (max-width:768px){
+
+.sidebar{
+    width:260px;
+    z-index:1000;
+}
+
+.main-content{
+    margin-left:0;
+    width:100%;
+}
+
+}
+
+/* ===========================
 End
 =========================== */
