@@ -7,127 +7,119 @@ const API_URL = "https://interviewlession.onrender.com/history";
 
 async function loadHistory() {
 
-const container = document.getElementById("historyContainer");
+    const container = document.getElementById("historyContainer");
 
-container.innerHTML = `
-<div class="loading">
-Loading Interview History...
-</div>
-`;
+    container.innerHTML = `
+    <div class="loading">
+    Loading Interview History...
+    </div>
+    `;
 
-try {
+    try {
 
-const user = await db.auth.getUser();
+        const {
+            data: { user }
+        } = await db.auth.getUser();
 
-const userId = user.data.user.id;
+        const response = await fetch(`${API_URL}/${user.id}`);
 
-const response = await fetch(`${API_URL}/${userId}`);
+        const history = await response.json();
 
-const history = await response.json();
+        if (history.length === 0) {
 
+            container.innerHTML = `
+            <div class="output-box">
+            No interview history found.
+            </div>
+            `;
 
+            return;
+        }
 
-if(history.length === 0){
+        let html = "";
 
-container.innerHTML = `
-<div class="output-box">
-No interview history found.
-</div>
-`;
+        history.forEach(item => {
 
-return;
+            const feedback = encodeURIComponent(item.feedback);
 
-}
+            html += `
 
-let html = "";
+            <div class="continue">
 
-history.forEach(item => {
+                <h3>🎤 ${item.company}</h3>
 
-html += `
+                <p><b>Role:</b> ${item.role}</p>
 
-<div class="continue">
+                <p><b>Score:</b> ⭐ ${item.score}</p>
 
-<h3>🎤 ${item.company}</h3>
+                <p><b>Date:</b> 📅 ${new Date(item.created_at).toLocaleString()}</p>
 
-<p><b>Role:</b> ${item.role}</p>
+                <button class="btn primary"
+                onclick="viewFeedback('${feedback}')">
 
-<p><b>Score:</b> ⭐ ${item.score}</p>
+                👁 View Feedback
 
-<p><b>Date:</b> 📅 ${new Date(item.created_at).toLocaleString()}</p>
+                </button>
 
-<button class="btn primary"
-onclick="viewFeedback(\`${item.feedback}\`)">
+                <button class="btn secondary"
+                onclick="deleteHistory(${item.id})">
 
-👁 View Feedback
+                🗑 Delete
 
-</button>
+                </button>
 
-<button class="btn secondary"
-onclick="deleteHistory(${item.id})">
+            </div>
 
-🗑 Delete
+            `;
+        });
 
-</button>
+        container.innerHTML = html;
 
-</div>
+    } catch (error) {
 
-`;
+        console.error(error);
 
-});
-
-container.innerHTML = html;
-
-}
-
-catch(error){
-
-console.error(error);
-
-container.innerHTML = `
-<div class="output-box">
-❌ Failed to load history.
-</div>
-`;
-
-}
-
+        container.innerHTML = `
+        <div class="output-box">
+        ❌ Failed to load history.
+        </div>
+        `;
+    }
 }
 
 // ===============================
 // View Feedback
 // ===============================
 
-function viewFeedback(feedback){
+function viewFeedback(feedback) {
 
-alert(feedback);
+    feedback = decodeURIComponent(feedback);
 
+    alert(feedback);
 }
 
 // ===============================
 // Delete History
 // ===============================
 
-async function deleteHistory(id){
+async function deleteHistory(id) {
 
-if(!confirm("Delete this interview history?")) return;
+    if (!confirm("Delete this interview history?")) return;
 
-try{
+    try {
 
-await fetch(`${API_URL}/${id}`,{
-method:"DELETE"
-});
+        await fetch(`${API_URL}/${id}`, {
+            method: "DELETE"
+        });
 
-loadHistory();
+        loadHistory();
 
-}
-catch(error){
+    } catch (error) {
 
-console.error(error);
+        console.error(error);
 
-alert("Failed to delete history.");
-
-}
-
+        alert("Failed to delete history.");
+    }
 }
 
 // Auto Load
