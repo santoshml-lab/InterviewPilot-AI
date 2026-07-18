@@ -150,7 +150,7 @@ await fetch(HISTORY_API, {
         "Content-Type": "application/json"
     },
     body: JSON.stringify({
-        user_id: localStorage.getItem("user_id") || "guest",
+        user_id: userId,
         company: company,
         role: role,
         score: score,
