@@ -30,7 +30,7 @@ return;
 
 alert("✅ Login Successful!");
 
-window.location.href = "dashboard.html";
+window.location.href = "index.html";
 
 });
 
@@ -89,7 +89,7 @@ const { error } = await db.auth.signInWithOAuth({
 provider: "google",
 
 options: {
-redirectTo: window.location.origin + "/dashboard.html"
+redirectTo: window.location.origin + "/index.html"
 }
 
 });
