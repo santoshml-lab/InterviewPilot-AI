@@ -17,9 +17,15 @@ Loading Interview History...
 
 try {
 
-const response = await fetch(API_URL);
+const user = await db.auth.getUser();
+
+const userId = user.data.user.id;
+
+const response = await fetch(`${API_URL}/${userId}`);
 
 const history = await response.json();
+
+
 
 if(history.length === 0){
 
@@ -47,7 +53,7 @@ html += `
 
 <p><b>Score:</b> ⭐ ${item.score}</p>
 
-<p><b>Date:</b> 📅 ${item.date}</p>
+<p><b>Date:</b> 📅 ${new Date(item.created_at).toLocaleString()}</p>
 
 <button class="btn primary"
 onclick="viewFeedback(\`${item.feedback}\`)">
