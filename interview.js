@@ -134,6 +134,16 @@ if (match) {
 }
 
 // Save History
+ const {
+    data: { session }
+} = await db.auth.getSession();
+
+const userId = session?.user?.id;
+
+if (!userId) {
+    alert("Please login first.");
+    return;
+}   
 await fetch(HISTORY_API, {
     method: "POST",
     headers: {
