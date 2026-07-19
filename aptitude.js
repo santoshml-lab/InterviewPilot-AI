@@ -4,6 +4,7 @@
 // ======================================
 
 const API_URL = "https://interviewlession.onrender.com/aptitude";
+const HISTORY_API = "https://interviewlession.onrender.com/aptitude-history";
 
 let currentQuestion = "";
 
@@ -118,6 +119,32 @@ async function submitAnswer() {
         const data = await response.json();
 
         feedbackBox.innerHTML = marked.parse(data.response);
+        let score = "0/10";
+
+const match = data.response.match(/(\d+(\.\d+)?)\s*\/\s*10/);
+
+if (match) {
+    score = match[0];
+}
+
+const {
+    data: { session }
+} = await db.auth.getSession();
+
+await fetch(HISTORY_API, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        user_id: session.user.id,
+        category: category,
+        difficulty: difficulty,
+        score: score,
+        question: currentQuestion,
+        feedback: data.response
+    })
+});
 
     }
 
