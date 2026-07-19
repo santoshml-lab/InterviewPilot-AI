@@ -213,3 +213,59 @@ if(streakBox){
 streakBox.innerHTML = "🔥 " + streak;
 
 }
+
+// ======================================
+// DASHBOARD API
+// ======================================
+
+const DASHBOARD_API = "https://interviewlession.onrender.com/dashboard";
+
+async function loadDashboard() {
+
+    if (typeof db === "undefined") return;
+
+    const {
+        data: { session }
+    } = await db.auth.getSession();
+
+    if (!session) return;
+
+    const userId = session.user.id;
+
+    try {
+
+        const response = await fetch(`${DASHBOARD_API}/${userId}`);
+
+        const data = await response.json();
+
+        const total = document.getElementById("totalInterviews");
+        if (total) total.innerHTML = "🏆 " + data.total_interviews;
+
+        const avg = document.getElementById("averageScore");
+        if (avg) avg.innerHTML = "⭐ " + data.average_score + "/10";
+
+        const resume = document.getElementById("resumeReviews");
+        if (resume) resume.innerHTML = "📄 " + data.resume_reviews;
+
+        const coding = document.getElementById("codingRounds");
+        if (coding) coding.innerHTML = "💻 " + data.coding_rounds;
+
+        const xp = document.getElementById("xp");
+        if (xp) xp.innerHTML = "⭐ " + data.xp + " XP";
+
+        const streak = document.getElementById("streak");
+        if (streak) streak.innerHTML = "🔥 " + data.streak;
+
+        const badge = document.getElementById("badge");
+        if (badge) badge.innerHTML = data.badge;
+
+        const ready = document.getElementById("readiness");
+        if (ready) ready.innerHTML = "🎯 " + data.readiness + "%";
+
+    } catch (err) {
+        console.error("Dashboard Error:", err);
+    }
+
+}
+
+window.addEventListener("DOMContentLoaded", loadDashboard);
