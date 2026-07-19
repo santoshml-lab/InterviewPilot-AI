@@ -890,53 +890,32 @@ Responsive - Tablet
 @media (max-width:992px){
 
 .sidebar{
-
-width:90px;
-padding:20px 10px;
-
+    width:270px;
 }
 
 .logo span{
-
-display:none;
-
-}
-
-.logo h2{
-
-font-size:20px;
-
+    display:block;
 }
 
 .sidebar nav a{
-
-font-size:0;
-padding:15px;
-text-align:center;
-
+    font-size:16px;
+    padding:15px 18px;
 }
 
 .main-content{
-
-margin-left:90px;
-width:calc(100% - 90px);
-padding:25px;
-
-}
-
-.hero{
-
-grid-template-columns:1fr;
-
-}
-
-.hero-left h1{
-
-font-size:42px;
-
+    margin-left:270px;
+    width:calc(100% - 270px);
 }
 
 }
+
+
+
+
+
+
+
+
 
 /* ===========================
 Responsive - Mobile
