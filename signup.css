@@ -1,0 +1,231 @@
+/* ==========================================
+   InterviewPilot AI
+   signup.css
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+
+background:#050816;
+color:#fff;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+min-height:100vh;
+
+overflow:hidden;
+
+}
+
+/* Background Glow */
+
+.glow{
+
+position:fixed;
+width:500px;
+height:500px;
+border-radius:50%;
+filter:blur(170px);
+z-index:-1;
+
+}
+
+.glow1{
+
+top:-180px;
+left:-180px;
+
+background:rgba(37,99,235,.30);
+
+}
+
+.glow2{
+
+bottom:-180px;
+right:-180px;
+
+background:rgba(6,182,212,.25);
+
+}
+
+/* Card */
+
+.signup-container{
+
+width:100%;
+display:flex;
+justify-content:center;
+padding:20px;
+
+}
+
+.signup-card{
+
+width:100%;
+max-width:450px;
+
+background:rgba(17,24,39,.90);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+padding:40px;
+
+box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+}
+
+.signup-card h1{
+
+text-align:center;
+font-size:34px;
+margin-bottom:10px;
+
+}
+
+.signup-card p{
+
+text-align:center;
+color:#94A3B8;
+margin-bottom:25px;
+
+}
+
+/* Inputs */
+
+input{
+
+width:100%;
+
+padding:15px;
+
+margin-bottom:18px;
+
+border-radius:14px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:#0F172A;
+
+color:#fff;
+
+font-size:16px;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+input:focus{
+
+border-color:#2563EB;
+
+box-shadow:0 0 0 4px rgba(37,99,235,.20);
+
+}
+
+/* Button */
+
+.btn{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:14px;
+
+background:linear-gradient(135deg,#2563EB,#06B6D4);
+
+color:#fff;
+
+font-size:17px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 15px 35px rgba(37,99,235,.35);
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 20px 45px rgba(37,99,235,.45);
+
+}
+
+/* Message */
+
+#message{
+
+margin-top:18px;
+
+text-align:center;
+
+font-weight:600;
+
+}
+
+/* Login */
+
+.login-text{
+
+margin-top:25px;
+
+text-align:center;
+
+}
+
+.login-text a{
+
+color:#38BDF8;
+
+text-decoration:none;
+
+font-weight:700;
+
+}
+
+.login-text a:hover{
+
+text-decoration:underline;
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.signup-card{
+
+padding:30px 20px;
+
+}
+
+.signup-card h1{
+
+font-size:28px;
+
+}
+
+}
