@@ -95,13 +95,23 @@ let xp = Number(localStorage.getItem("xp")) || 0;
 
 function addXP(amount){
 
-xp += amount;
+    xp += amount;
 
-localStorage.setItem("xp", xp);
+    localStorage.setItem("xp", xp);
 
-updateXP();
+    updateXP();
+
+    saveLeaderboard();
 
 }
+
+
+
+
+
+
+
+
 
 function updateXP(){
 
@@ -262,6 +272,8 @@ async function loadDashboard() {
         const ready = document.getElementById("readiness");
         if (ready) ready.innerHTML = "🎯 " + data.readiness + "%";
 
+        saveLeaderboard();
+
     } catch (err) {
         console.error("Dashboard Error:", err);
     }
@@ -269,3 +281,44 @@ async function loadDashboard() {
 }
 
 window.addEventListener("DOMContentLoaded", loadDashboard);
+
+// ======================================
+// Save Leaderboard
+// ======================================
+
+const LEADERBOARD_API = "https://interviewlession.onrender.com/leaderboard";
+
+async function saveLeaderboard() {
+
+    if (typeof db === "undefined") return;
+
+    const {
+        data: { session }
+    } = await db.auth.getSession();
+
+    if (!session) return;
+
+    const user = session.user;
+
+    await fetch(LEADERBOARD_API, {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+
+            user_id: user.id,
+            name: user.user_metadata?.full_name ||
+                  user.user_metadata?.name ||
+                  user.email,
+            xp: xp,
+            badge: localStorage.getItem("badge") || "🌱 Beginner"
+
+        })
+
+    });
+
+}
