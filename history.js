@@ -3,17 +3,21 @@
 // history.js
 // ======================================
 
-const API_URL = "https://interviewlession.onrender.com/history";
+const INTERVIEW_API = "https://interviewlession.onrender.com/history";
+const APTITUDE_API = "https://interviewlession.onrender.com/aptitude-history";
 
-async function loadHistory() {
+// ======================================
+// Load Interview History
+// ======================================
+
+async function loadInterviewHistory() {
 
     const container = document.getElementById("historyContainer");
 
     container.innerHTML = `
     <div class="loading">
-    Loading Interview History...
-    </div>
-    `;
+        Loading Interview History...
+    </div>`;
 
     try {
 
@@ -21,18 +25,14 @@ async function loadHistory() {
             data: { user }
         } = await db.auth.getUser();
 
-        const response = await fetch(`${API_URL}/${user.id}`);
-
+        const response = await fetch(`${INTERVIEW_API}/${user.id}`);
         const history = await response.json();
 
-        if (history.length === 0) {
-
+        if (!history.length) {
             container.innerHTML = `
             <div class="output-box">
-            No interview history found.
-            </div>
-            `;
-
+                No Interview History Found.
+            </div>`;
             return;
         }
 
@@ -43,7 +43,6 @@ async function loadHistory() {
             const feedback = encodeURIComponent(item.feedback);
 
             html += `
-
             <div class="continue">
 
                 <h3>🎤 ${item.company}</h3>
@@ -56,116 +55,68 @@ async function loadHistory() {
 
                 <button class="btn primary"
                 onclick="viewFeedback('${feedback}')">
-
                 👁 View Feedback
-
                 </button>
 
                 <button class="btn secondary"
-                onclick="deleteHistory(${item.id})">
-
+                onclick="deleteInterviewHistory(${item.id})">
                 🗑 Delete
-
                 </button>
 
-            </div>
-
-            `;
+            </div>`;
         });
 
         container.innerHTML = html;
 
-    } catch (error) {
+    } catch (err) {
 
-        console.error(error);
+        console.error(err);
 
         container.innerHTML = `
         <div class="output-box">
-        ❌ Failed to load history.
-        </div>
-        `;
+            ❌ Failed to load Interview History.
+        </div>`;
     }
+
 }
 
-// ===============================
-// View Feedback
-// ===============================
-
-function viewFeedback(feedback) {
-
-    feedback = decodeURIComponent(feedback);
-
-    document.getElementById("historyContainer").innerHTML += `
-        <div class="output-box">
-            ${marked.parse(feedback)}
-        </div>
-    `;
-}
-
-    
-
-// ===============================
-// Delete History
-// ===============================
-
-async function deleteHistory(id) {
-
-    if (!confirm("Delete this interview history?")) return;
-
-    try {
-
-        await fetch(`${API_URL}/${id}`, {
-            method: "DELETE"
-        });
-
-        loadHistory();
-
-    } catch (error) {
-
-        console.error(error);
-
-        alert("Failed to delete history.");
-    }
-}
-
-// Auto Load
-
-window.onload = loadHistory;
+// ======================================
+// Load Aptitude History
+// ======================================
 
 async function loadAptitudeHistory() {
 
     const container = document.getElementById("historyContainer");
 
-    container.innerHTML = "<div class='loading'>Loading Aptitude History...</div>";
-
-    const {
-        data: { session }
-    } = await db.auth.getSession();
-
-    if (!session) {
-        container.innerHTML = "Please login first.";
-        return;
-    }
-
-    const userId = session.user.id;
+    container.innerHTML = `
+    <div class="loading">
+        Loading Aptitude History...
+    </div>`;
 
     try {
 
-        const response = await fetch(`https://interviewlession.onrender.com/aptitude-history/${userId}`);
+        const {
+            data: { user }
+        } = await db.auth.getUser();
 
+        const response = await fetch(`${APTITUDE_API}/${user.id}`);
         const history = await response.json();
 
-        if (history.length === 0) {
+        if (!history.length) {
 
-            container.innerHTML = "<div class='output-box'>No Aptitude History Found.</div>";
+            container.innerHTML = `
+            <div class="output-box">
+                No Aptitude History Found.
+            </div>`;
 
             return;
-
         }
 
         let html = "";
 
         history.forEach(item => {
+
+            const feedback = encodeURIComponent(item.feedback);
 
             html += `
             <div class="continue">
@@ -179,7 +130,7 @@ async function loadAptitudeHistory() {
                 <p><b>Date:</b> 📅 ${new Date(item.created_at).toLocaleString()}</p>
 
                 <button class="btn primary"
-                onclick="viewFeedback(\`${item.feedback}\`)">
+                onclick="viewFeedback('${feedback}')">
                 👁 View Feedback
                 </button>
 
@@ -188,24 +139,96 @@ async function loadAptitudeHistory() {
                 🗑 Delete
                 </button>
 
-            </div>
-            `;
-
+            </div>`;
         });
 
         container.innerHTML = html;
 
-    }
-
-    catch (err) {
+    } catch (err) {
 
         console.error(err);
 
-        container.innerHTML = "<div class='output-box'>Failed to load Aptitude History.</div>";
+        container.innerHTML = `
+        <div class="output-box">
+            ❌ Failed to load Aptitude History.
+        </div>`;
+    }
+
+}
+
+// ======================================
+// View Feedback
+// ======================================
+
+function viewFeedback(feedback) {
+
+    feedback = decodeURIComponent(feedback);
+
+    document.getElementById("historyContainer").innerHTML += `
+    <div class="output-box">
+        ${marked.parse(feedback)}
+    </div>`;
+}
+
+// ======================================
+// Delete Interview History
+// ======================================
+
+async function deleteInterviewHistory(id) {
+
+    if (!confirm("Delete this interview history?")) return;
+
+    try {
+
+        await fetch(`${INTERVIEW_API}/${id}`, {
+            method: "DELETE"
+        });
+
+        loadInterviewHistory();
+
+    } catch (err) {
+
+        console.error(err);
+
+        alert("Failed to delete interview history.");
 
     }
 
 }
+
+// ======================================
+// Delete Aptitude History
+// ======================================
+
+async function deleteAptitudeHistory(id) {
+
+    if (!confirm("Delete this aptitude history?")) return;
+
+    try {
+
+        await fetch(`${APTITUDE_API}/${id}`, {
+            method: "DELETE"
+        });
+
+        loadAptitudeHistory();
+
+    } catch (err) {
+
+        console.error(err);
+
+        alert("Failed to delete aptitude history.");
+
+    }
+
+}
+
+// ======================================
+// Auto Load
+// ======================================
+
+window.onload = function () {
+    loadInterviewHistory();
+};
 
 
 
