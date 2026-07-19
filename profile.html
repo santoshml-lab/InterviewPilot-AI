@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Profile | InterviewPilot AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+<h2>🎯 InterviewPilot</h2>
+<span>AI Career Platform</span>
+</div>
+
+<nav>
+
+<a href="index.html">🏠 Dashboard</a>
+<a href="interview.html">🎤 AI Interview</a>
+<a href="resume.html">📄 Resume Analyzer</a>
+<a href="coding.html">💻 Coding Round</a>
+<a href="aptitude.html">🧠 Aptitude</a>
+<a href="performance.html">📊 Performance</a>
+<a href="history.html">📜 Interview History</a>
+<a href="profile.html" class="active">👤 Profile</a>
+
+<a href="#" onclick="logout()">🚪 Logout</a>
+
+</nav>
+
+</aside>
+
+<!-- Main -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h2>👤 My Profile</h2>
+
+<p>Manage your InterviewPilot account.</p>
+
+</div>
+
+</header>
+
+<!-- User Card -->
+
+<section class="continue">
+
+<div style="text-align:center;">
+
+<h1 style="font-size:70px;">👨‍💻</h1>
+
+<h2 id="userName">Loading...</h2>
+
+<p id="userEmail">Loading...</p>
+
+</div>
+
+</section>
+
+<!-- Stats -->
+
+<section class="stats">
+
+<div class="stat">
+<h2 id="totalInterviews">0</h2>
+<p>Interviews</p>
+</div>
+
+<div class="stat">
+<h2 id="averageScore">0/10</h2>
+<p>Average Score</p>
+</div>
+
+<div class="stat">
+<h2 id="resumeReviews">0</h2>
+<p>Resume Reviews</p>
+</div>
+
+<div class="stat">
+<h2 id="codingRounds">0</h2>
+<p>Coding Rounds</p>
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<h2 id="xp">0 XP</h2>
+<p>Total XP</p>
+</div>
+
+<div class="stat">
+<h2 id="streak">0</h2>
+<p>Daily Streak</p>
+</div>
+
+<div class="stat">
+<h2 id="badge">🌱 Beginner</h2>
+<p>Current Badge</p>
+</div>
+
+<div class="stat">
+<h2 id="readiness">0%</h2>
+<p>Hiring Readiness</p>
+</div>
+
+</section>
+
+<section class="continue">
+
+<h3>🚀 Account Status</h3>
+
+<p>
+
+Keep practicing interviews daily to increase your XP, improve your badge, and boost your hiring readiness.
+
+</p>
+
+<button class="btn primary" onclick="location.href='interview.html'">
+
+🎤 Start Interview
+
+</button>
+
+</section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+<script src="auth.js"></script>
+<script src="profile.js"></script>
+
+</body>
+
+</html>
