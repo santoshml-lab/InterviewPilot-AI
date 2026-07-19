@@ -1,0 +1,808 @@
+/* ==========================================
+   InterviewPilot AI
+   landing.css
+   PART 1
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#050816;
+color:#fff;
+overflow-x:hidden;
+
+}
+
+/* ===========================
+Background Glow
+=========================== */
+
+.glow{
+
+position:fixed;
+width:600px;
+height:600px;
+border-radius:50%;
+filter:blur(180px);
+z-index:-1;
+
+}
+
+.glow1{
+
+top:-200px;
+left:-200px;
+background:rgba(37,99,235,.28);
+
+}
+
+.glow2{
+
+bottom:-200px;
+right:-200px;
+background:rgba(6,182,212,.20);
+
+}
+
+/* ===========================
+Navbar
+=========================== */
+
+.landing-nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:25px 70px;
+
+position:sticky;
+top:0;
+
+background:rgba(5,8,22,.85);
+backdrop-filter:blur(15px);
+
+z-index:100;
+
+}
+
+.logo h2{
+
+font-size:32px;
+font-weight:800;
+color:#fff;
+
+}
+
+/* ===========================
+Buttons
+=========================== */
+
+.btn{
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+padding:14px 26px;
+
+border-radius:14px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.btn.primary{
+
+background:linear-gradient(
+135deg,
+#2563EB,
+#06B6D4
+);
+
+color:#fff;
+
+box-shadow:0 15px 35px rgba(37,99,235,.35);
+
+}
+
+.btn.primary:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 20px 45px rgba(37,99,235,.45);
+
+}
+
+.btn.secondary{
+
+background:#111827;
+
+color:#fff;
+
+border:1px solid rgba(255,255,255,.08);
+
+margin-right:12px;
+
+}
+
+.btn.secondary:hover{
+
+background:#1E293B;
+
+}
+
+/* ===========================
+Hero Section
+=========================== */
+
+.landing-hero{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+padding:80px 70px;
+
+min-height:90vh;
+
+}
+
+.hero-tag{
+
+display:inline-block;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+background:rgba(37,99,235,.18);
+
+border:1px solid rgba(37,99,235,.35);
+
+color:#60A5FA;
+
+font-weight:700;
+
+}
+
+.landing-left h1{
+
+font-size:68px;
+
+font-weight:800;
+
+line-height:1.1;
+
+margin:25px 0;
+
+}
+
+.landing-left h1 span{
+
+color:#38BDF8;
+
+}
+
+.landing-left p{
+
+font-size:19px;
+
+line-height:1.9;
+
+color:#CBD5E1;
+
+max-width:650px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:18px;
+
+margin-top:35px;
+
+flex-wrap:wrap;
+
+}
+
+.landing-right{
+
+text-align:center;
+
+}
+
+.landing-right img{
+
+width:100%;
+max-width:650px;
+
+border-radius:22px;
+
+box-shadow:0 30px 70px rgba(37,99,235,.25);
+
+animation:floatImage 5s ease-in-out infinite;
+
+}
+
+@keyframes floatImage{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
+
+}
+
+/* ==========================================
+   landing.css
+   PART 2
+========================================== */
+
+/* ===========================
+Section Title
+=========================== */
+
+.section-title{
+
+text-align:center;
+padding:80px 20px 40px;
+
+}
+
+.section-title h2{
+
+font-size:48px;
+font-weight:800;
+margin-bottom:15px;
+
+}
+
+.section-title p{
+
+font-size:18px;
+color:#94A3B8;
+
+}
+
+/* ===========================
+Feature Cards
+=========================== */
+
+.dashboard{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+padding:30px 70px 80px;
+
+}
+
+.dashboard-card{
+
+background:rgba(17,24,39,.75);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+padding:35px;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.dashboard-card:hover{
+
+transform:translateY(-10px);
+
+border-color:#2563EB;
+
+box-shadow:0 25px 60px rgba(37,99,235,.25);
+
+}
+
+.dashboard-card h3{
+
+font-size:24px;
+
+margin-bottom:15px;
+
+color:#38BDF8;
+
+}
+
+.dashboard-card p{
+
+font-size:16px;
+
+line-height:1.8;
+
+color:#CBD5E1;
+
+}
+
+/* ===========================
+Statistics
+=========================== */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+padding:20px 70px 80px;
+
+}
+
+.stat{
+
+background:rgba(17,24,39,.75);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+padding:30px;
+
+text-align:center;
+
+transition:.35s;
+
+}
+
+.stat:hover{
+
+transform:translateY(-8px);
+
+border-color:#06B6D4;
+
+box-shadow:0 20px 50px rgba(6,182,212,.20);
+
+}
+
+.stat h2{
+
+font-size:40px;
+
+margin-bottom:12px;
+
+color:#38BDF8;
+
+}
+
+.stat p{
+
+font-size:17px;
+
+color:#CBD5E1;
+
+}
+
+/* ==========================================
+   landing.css
+   PART 3
+========================================== */
+
+/* ===========================
+Screenshots
+=========================== */
+
+.subjects{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+padding:20px 70px 80px;
+
+}
+
+.subject{
+
+background:rgba(17,24,39,.75);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+padding:20px;
+
+text-align:center;
+
+backdrop-filter:blur(20px);
+
+transition:.35s;
+
+}
+
+.subject:hover{
+
+transform:translateY(-10px);
+
+border-color:#2563EB;
+
+box-shadow:0 20px 50px rgba(37,99,235,.25);
+
+}
+
+.subject img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:16px;
+
+margin-bottom:20px;
+
+}
+
+.subject h3{
+
+font-size:22px;
+
+margin-bottom:10px;
+
+color:#38BDF8;
+
+}
+
+/* ===========================
+Continue Cards
+=========================== */
+
+.continue{
+
+background:rgba(17,24,39,.75);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+padding:40px;
+
+margin:40px 70px;
+
+backdrop-filter:blur(20px);
+
+transition:.35s;
+
+}
+
+.continue:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 60px rgba(37,99,235,.20);
+
+}
+
+.continue h2,
+.continue h3{
+
+font-size:34px;
+
+margin-bottom:20px;
+
+color:#38BDF8;
+
+}
+
+.continue p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#CBD5E1;
+
+}
+
+/* ===========================
+About Developer
+=========================== */
+
+.continue strong{
+
+color:#38BDF8;
+
+font-weight:700;
+
+}
+
+/* ===========================
+Image Animation
+=========================== */
+
+.subject img{
+
+transition:.4s;
+
+}
+
+.subject:hover img{
+
+transform:scale(1.05);
+
+}
+
+/* ==========================================
+   landing.css
+   PART 4 (FINAL)
+========================================== */
+
+/* ===========================
+Footer
+=========================== */
+
+footer{
+
+margin-top:80px;
+
+padding:50px 20px;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+background:rgba(17,24,39,.75);
+
+backdrop-filter:blur(20px);
+
+}
+
+footer h2{
+
+font-size:34px;
+
+margin-bottom:15px;
+
+color:#38BDF8;
+
+}
+
+footer p{
+
+font-size:17px;
+
+line-height:1.8;
+
+color:#CBD5E1;
+
+}
+
+/* ===========================
+Hover Effects
+=========================== */
+
+.btn,
+.dashboard-card,
+.subject,
+.stat,
+.continue{
+
+transition:all .35s ease;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* ===========================
+Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0F172A;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#2563EB;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#06B6D4;
+
+}
+
+/* ===========================
+Selection
+=========================== */
+
+::selection{
+
+background:#2563EB;
+
+color:#fff;
+
+}
+
+/* ===========================
+Responsive
+=========================== */
+
+@media(max-width:992px){
+
+.landing-nav{
+
+padding:20px 30px;
+
+}
+
+.landing-hero{
+
+grid-template-columns:1fr;
+
+padding:60px 30px;
+
+text-align:center;
+
+}
+
+.dashboard,
+.subjects,
+.stats{
+
+padding:20px 30px 60px;
+
+}
+
+.continue{
+
+margin:30px;
+
+}
+
+.landing-left h1{
+
+font-size:48px;
+
+}
+
+.section-title h2{
+
+font-size:38px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-buttons .btn{
+
+width:100%;
+
+}
+
+.landing-left h1{
+
+font-size:38px;
+
+}
+
+.section-title h2{
+
+font-size:30px;
+
+}
+
+.dashboard,
+.subjects,
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+.landing-nav{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.logo h2{
+
+font-size:26px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.landing-left h1{
+
+font-size:30px;
+
+}
+
+.landing-left p{
+
+font-size:16px;
+
+}
+
+.dashboard-card,
+.subject,
+.stat,
+.continue{
+
+padding:20px;
+
+}
+
+footer h2{
+
+font-size:26px;
+
+}
+
+footer p{
+
+font-size:15px;
+
+}
+
+}
