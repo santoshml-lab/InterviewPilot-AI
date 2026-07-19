@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Leaderboard | InterviewPilot AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<aside class="sidebar">
+
+<div class="logo">
+<h2>🎯 InterviewPilot</h2>
+<span>AI Career Platform</span>
+</div>
+
+<nav>
+
+<a href="index.html">🏠 Dashboard</a>
+<a href="interview.html">🎤 AI Interview</a>
+<a href="resume.html">📄 Resume Analyzer</a>
+<a href="coding.html">💻 Coding Round</a>
+<a href="aptitude.html">🧠 Aptitude</a>
+<a href="performance.html">📊 Performance</a>
+<a href="history.html">📜 History</a>
+<a href="leaderboard.html" class="active">🏆 Leaderboard</a>
+<a href="profile.html">👤 Profile</a>
+<a href="#" onclick="logout()">🚪 Logout</a>
+
+</nav>
+
+</aside>
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h2>🏆 Global Leaderboard</h2>
+
+<p>Top performers on InterviewPilot AI</p>
+
+</div>
+
+</header>
+
+<section class="continue">
+
+<h3>Top Users</h3>
+
+<table style="width:100%;border-collapse:collapse;">
+
+<thead>
+
+<tr>
+
+<th>#</th>
+
+<th>Name</th>
+
+<th>XP</th>
+
+<th>Badge</th>
+
+</tr>
+
+</thead>
+
+<tbody id="leaderboardBody">
+
+<tr>
+
+<td colspan="4" style="text-align:center;padding:20px;">
+Loading Leaderboard...
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+<script src="auth.js"></script>
+
+<script src="leaderboard.js"></script>
+
+</body>
+
+</html>
